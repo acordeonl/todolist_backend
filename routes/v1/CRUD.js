@@ -66,7 +66,7 @@ router.post('/', verifyUser, async function(req, res, next) {
     }
 } , refreshJWT);
 
-router.patch('/:entityId', verifyUser, async function (req, res, next) {
+router.put('/:entityId', verifyUser, async function (req, res, next) {
     try {
         let entityId = req.params.entityId ;
         let entity = req.baseUrl.replace(/^\/v1\//,'') ; 
