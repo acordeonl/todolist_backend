@@ -1,0 +1,19 @@
+{
+    "passwordRecovery":{
+        "title":"Reset your Key Conservation password", 
+        "content":"Please use the following verification code for resetting your password: ${code}"
+    },
+    "userNotifications":{
+        "campaignUpdateForSupporter":"${username} posted an update for the [${campaignName}](/campaigns/${campaignId}) campaign",
+        "taggedInPost":"${username} mentioned you in a [post](/posts/${postId})",
+        "moneySupport":"[${supporterUsername}](/users/${supporterId}) gave ${ammount} for the [${campaignName}](/campaigns/${campaignId}) campaign (paymentId: ${paymentId})",
+        "skillSupport": "[${supporterUsername}](/users/${supporterId}) can give ${skillName} skills on the [${campaignName}](/campaigns/${campaignId}) campaign",
+        "inPersonSupport": "[${supporterUsername}](/users/${supporterId}) can give in person help with the [${campaignName}](/campaigns/${campaignId}) campaign",
+        "urgentAlert":"${username} has an urgent [need](/posts/${postId})"
+	},
+	"userChatMessages":{
+		"skillSupport":"Hi, I'm ready to start helping with the ${campaignName} campaign using my ${skillName} skills.",
+        "inPersonSupport":"Hi, I'm ready to start giving in person help with the ${campaignName} campaign.",
+        "phoneNumberMessage":"My phone number is: ${supporterPhoneNumber}"
+	}
+}
