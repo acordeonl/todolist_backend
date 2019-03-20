@@ -12,7 +12,7 @@ router.get('/:userId', verifyUser, async function(req, res, next) {
     try{
         let payload = await db.users.findOne({
             where:{id:req.params.userId},
-            attributes:['id','name','username','mediaPath']
+            attributes:['id','username','email']
         }) ; 
         req.response_data = {
             status: 200,
@@ -28,10 +28,6 @@ router.get('/:userId', verifyUser, async function(req, res, next) {
 router.patch('/update', verifyUser, async function (req, res, next) {
     try {
         if(req.body.password) { 
-            if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,50}$/.test(req.body.password)) {
-                res.status(400).json({dev_message:"password isn't secure"}) ;
-                return ; 
-            }
             req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10) ) ; 
         }
         let result = await db.users.update(

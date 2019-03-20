@@ -1,0 +1,1 @@
+dev_db_database=todolist sequelize db:migrate
