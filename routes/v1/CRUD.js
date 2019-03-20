@@ -17,8 +17,8 @@ router.get('/list', verifyUser, async function (req, res, next) {
             where: {
                 userId: req.user.id
             },
-            offset: page * elementsPerPage,
-            limit: elementsPerPage
+            // offset: page * elementsPerPage,
+            // limit: elementsPerPage
         });
         req.response_data = {
             status: 200,
@@ -38,6 +38,22 @@ router.get('/:entityId', verifyUser, async function(req, res, next) {
             id:entityId,
             userId:req.user.id
         }}) ; 
+        req.response_data = {
+            status: 200,
+            payload:data
+        };
+        next() ; 
+    }
+    catch(err){
+        next(err) ; 
+    }
+} , refreshJWT);
+
+router.post('/', verifyUser, async function(req, res, next) {
+    try{
+        let entity = req.baseUrl.replace(/^\/v1\//,'') ;
+        req.body.userId = req.user.id ;
+        let data = await db[entity].create(req.body) ; 
         req.response_data = {
             status: 200,
             payload:data

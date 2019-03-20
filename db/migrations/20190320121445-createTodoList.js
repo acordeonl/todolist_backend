@@ -24,6 +24,9 @@ module.exports = {
                   type: Sequelize.STRING,
                   defaultValue:''
                 },
+                todos: {
+                  type: Sequelize.STRING
+                },
                 createdAt: {
                     type: Sequelize.DATE
                 },

@@ -41,7 +41,6 @@ fs
 // --------------- Associations ----------------------          
     // --------------- TodoList ----------------------
       db.users.hasMany(db.todoLists) ;
-      db.todoLists.hasMany(db.todos) ;
         // db.campaigns.belongsTo(db.users) ; 
         // db.campaigns.hasMany(db.campaignSupport) ;
         // db.campaigns.hasMany(db.keys) ;
