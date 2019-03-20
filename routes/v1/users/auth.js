@@ -8,14 +8,9 @@ var handleBasicAuth = require('../../../helpers/handleBasicAuth') ;
 // --------------- Email Login ----------------------
     router.post('/signUp', async function (req, res, next) {
         try {
-            if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,50}$/.test(req.body.password)){
-                res.status(400).json({dev_message:"password isn't secure"}) ;
-                return ; 
-            }
             let user = await db.users.find({
                 where:{
-                    email:req.body.email,
-                    isOrganization:req.body.isOrganization
+                    email:req.body.email
                 }
             }) ; 
             if(!user){
@@ -37,7 +32,7 @@ var handleBasicAuth = require('../../../helpers/handleBasicAuth') ;
     router.post('/emailLogin' , async function (req, res, next) {
         try{
             if (req.body.email !== undefined && req.body.password !== undefined) {
-                let {status,user,access_token} = await handleBasicAuth(req.body.email,req.body.password,req.body.isOrganization) ; 
+                let {status,user,access_token} = await handleBasicAuth(req.body.email,req.body.password) ; 
                 if(status === 200) { 
                     res.status(200).json({
                         payload:user,

@@ -16,35 +16,6 @@ module.exports = {
                 password: {
                   type: Sequelize.STRING
                 },
-                language: {
-                  type: Sequelize.STRING,
-                  defaultValue:'en'
-                },
-                name: {
-                  type: Sequelize.STRING
-                },
-                description: {
-                  type: Sequelize.TEXT
-                },
-                mediaPath: {
-                  type: Sequelize.STRING
-                },
-                displayLocation: {
-                  type: Sequelize.STRING
-                },
-                latitude: {
-                  type: Sequelize.DOUBLE
-                },
-                longitude: {
-                  type: Sequelize.DOUBLE
-                },
-                isOrganization: {
-                  type: Sequelize.BOOLEAN,
-                  defaultValue:false
-                },
-                parentOrganizationId: {
-                  type: Sequelize.INTEGER
-                },
                 createdAt: {
                     type: Sequelize.DATE
                 },

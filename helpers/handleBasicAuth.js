@@ -11,19 +11,17 @@ const { JWT_SECRET , JWT_EXPIRATION } = require('../config/userAuth') ;
  * @param {string} email user's email
  * @param {string} password user's password
  */
-module.exports = async function handleBasicAuth (email,password,isOrganization) { 
+module.exports = async function handleBasicAuth (email,password) { 
     let user = await db.users.find({
         where:{
-            email,
-            isOrganization
+            email
         }
     }) ; 
     // compare password with hash saved on database
     if (user !== null && user.password && bcrypt.compareSync(password, user.password)) {
         // respond with new access token for loggued in user
         let access_token = jwt.sign({
-            id:user.id,
-            isOrganization: user.isOrganization
+            id:user.id
         }, JWT_SECRET , {expiresIn:JWT_EXPIRATION}); 
         return {
             status:200,

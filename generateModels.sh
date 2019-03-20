@@ -1,0 +1,1 @@
+sequelize-auto -o "./db/models" -d todolist -h localhost -u postgres -x Curramba2018 -e postgres -a .sequelize-auto.cfg.js
