@@ -17,6 +17,7 @@ router.get('/list', verifyUser, async function (req, res, next) {
             where: {
                 userId: req.user.id
             },
+            order: [['updatedAt','DESC']]
             // offset: page * elementsPerPage,
             // limit: elementsPerPage
         });
