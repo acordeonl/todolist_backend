@@ -1,6 +1,0 @@
-{
-    "passwordRecovery":{
-        "title":"Reset your Key Conservation password", 
-        "content":"Tu còdigo para recuperar contraseña es: ${code}"
-    }
-}   

@@ -2,7 +2,7 @@
  * @module middleware/auth/handleLogin
  * */
 const { JWT_SECRET , JWT_EXPIRATION } = require('../../config/userAuth') ; 
-const { messages_authentication } = require('../../config/en_user_messages') ;  
+const { authentication_messages } = require('../../config/en_user_messages') ;  
 var jwt = require('jsonwebtoken') ; 
 var {db}  = require('../../db/models');
 var createUser = require('../../helpers/createUser'); 
@@ -39,7 +39,7 @@ module.exports = async (req, res, next) => {
         }, JWT_SECRET , {expiresIn:JWT_EXPIRATION}); 
         res.status(200).json({
             payload:user,
-            user_message: messages_authentication.credenciales_validas,
+            user_message: authentication_messages.valid_credentials,
             newUser,
             access_token:token
         });

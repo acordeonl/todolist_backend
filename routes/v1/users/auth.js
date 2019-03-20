@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {messages_authentication} = require('../../../config/en_user_messages') ;
+const {authentication_messages} = require('../../../config/en_user_messages') ;
 var {db}  = require('../../../db/models');
 var createUser = require('../../../helpers/createUser'); 
 var handleBasicAuth = require('../../../helpers/handleBasicAuth') ; 
@@ -36,23 +36,23 @@ var handleBasicAuth = require('../../../helpers/handleBasicAuth') ;
                 if(status === 200) { 
                     res.status(200).json({
                         payload:user,
-                        user_message: messages_authentication.credenciales_validas,
+                        user_message: authentication_messages.valid_credentials,
                         access_token
                     });
                 }
                 else {
                     res.status(401).json({
-                        user_message: messages_authentication.credenciales_no_validas
+                        user_message: authentication_messages.invalid_credentials
                     });
                 }
             } else if (req.body.email !== undefined){
                 res.status(400).json({
-                    user_message: messages_authentication.faltan_campos
+                    user_message: authentication_messages.missing_fields
                 });
             }
             else {
                 res.status(400).json({
-                    user_message: messages_authentication.faltan_campos
+                    user_message: authentication_messages.missing_fields
                 });
             }
         } catch(err){

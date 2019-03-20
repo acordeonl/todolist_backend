@@ -3,7 +3,7 @@
  * */
 const jwt = require('jsonwebtoken') ; 
 const {JWT_SECRET} = require('../../config/userAuth') ; 
-const {messages_authorization} = require('../../config/en_user_messages') ;
+const {authorization_messages} = require('../../config/en_user_messages') ;
 var handleBasicAuth = require('../../helpers/handleBasicAuth') ; 
 
 /**
@@ -35,7 +35,7 @@ module.exports = async (req, res, next) => {
     }
     catch(err){
         res.status(401).json({
-            dev_message: messages_authorization.dev_token_no_valido
+            dev_message: authorization_messages.dev_invalid_token
         });
     }
 };
