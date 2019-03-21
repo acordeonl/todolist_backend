@@ -37,7 +37,7 @@ Server must contain the following environment variables:
     -JWT_SECRET
     -JWT_EXPIRATION
 
-## Run api with docker
+## Run API with docker
 Run `docker-compose up` at the root folder
 
 ## Manually Running the api
