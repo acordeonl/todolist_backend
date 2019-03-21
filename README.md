@@ -40,7 +40,7 @@ Server must contain the following environment variables:
 ## Run API with Docker
 Run `docker-compose up` at the root folder
 
-## Manually Running the api
+## Manually Running the API
 1. Install app dependencies with `npm install` on the root folder
 1. Install sequelize-cli with `npm install -g sequelize-cli`
 1. Run `sequelize db:create` on terminal
