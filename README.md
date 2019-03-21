@@ -1,6 +1,3 @@
-[[JSDocs](http://keyconservation-docs.surge.sh/)]
-    [[API_Docs](https://documenter.getpostman.com/view/5818678/RzthRrE1)]
-
 # Todo list app backend
 
 This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize.
