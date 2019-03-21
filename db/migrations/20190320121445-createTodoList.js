@@ -21,11 +21,11 @@ module.exports = {
                   defaultValue:'Untitled todo list'
                 },
                 tags: {
-                  type: Sequelize.STRING,
+                  type: Sequelize.TEXT,
                   defaultValue:''
                 },
                 todos: {
-                  type: Sequelize.STRING
+                  type: Sequelize.TEXT
                 },
                 createdAt: {
                     type: Sequelize.DATE

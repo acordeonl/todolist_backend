@@ -22,12 +22,12 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 'Untitled todo list'
     },
     tags: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
       defaultValue: ''
     },
     todos: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true
     },
     createdAt: {
