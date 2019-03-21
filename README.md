@@ -3,7 +3,7 @@
 This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize. API contains basic CRUD operations for managing todo lists and user authentication with tokens (JWT).
 
 ## Run API with Docker
-Run `docker-compose up` at the root folder
+Run `docker-compose up` at the root folder (Runs API on port 3000)
 
 ## Server configuration
 Server must have `node.js (v11.6.0)` and `postgresql (9.5.0)` installed.
