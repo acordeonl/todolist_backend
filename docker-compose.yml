@@ -35,10 +35,11 @@ services:
       - "db"
     command:
       sh -c 'npm i && npm run dbcreate && npm run dbmigrate && node bin/www'
-  
+    restart: always
   db:
     image: postgres:9.5-alpine
     environment:
       - POSTGRES_PASSWORD=Curramba2018
     ports:
       - "5432:5432"
+    restart: always
