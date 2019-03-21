@@ -1,6 +1,6 @@
 # Todo list app backend
 
-This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize.
+This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize. API contains basic CRUD operations for managing todo lists and user authentication with tokens (JWT).
 
 ## Server configuration
 Server must have `node.js (v11.6.0)` and `postgresql (9.5.0)` installed.
@@ -37,8 +37,12 @@ Server must contain the following environment variables:
     -JWT_SECRET
     -JWT_EXPIRATION
 
-## Running the App
+## Run api with docker
+Run `docker-compose up` at the root folder
+
+## Manually Running the api
 1. Install app dependencies with `npm install` on the root folder
+1. Install sequelize-cli with `npm install -g sequelize-cli`
 1. Run `sequelize db:create` on terminal
 1. Run `sequelize db:migrate` on terminal
 1. Run `node bin/www` on root folder
