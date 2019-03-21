@@ -46,3 +46,5 @@ Run `docker-compose up` at the root folder
 1. Run `sequelize db:create` on terminal
 1. Run `sequelize db:migrate` on terminal
 1. Run `node bin/www` on root folder
+
+Node server runs on port 3000
