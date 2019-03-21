@@ -1,6 +1,6 @@
 # Todo list app backend
 
-This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize. API contains basic CRUD operations for managing todo lists and user authentication with tokens (JWT).
+This project contains a REST API built with Node.js and Express for the [todo list app](https://github.com/acordeonl/todolist_frontend). The API uses a postgresql database with sequelize. API contains basic CRUD operations for managing todo lists and user authentication with tokens (JWT).
 
 ## Run API with Docker
 Run `docker-compose up` at the root folder (Runs API on port 3000)
