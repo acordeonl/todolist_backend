@@ -7,6 +7,10 @@ var handleBasicAuth = require('../../../helpers/handleBasicAuth') ;
 
 // --------------- Email Login ----------------------
     router.post('/signUp', async function (req, res, next) {
+        if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,50}$/.test(req.body.password)){
+            res.status(400).json({dev_message:"password isn't secure"}) ;
+            return ; 
+        }
         try {
             let user = await db.users.find({
                 where:{
