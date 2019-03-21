@@ -3,7 +3,7 @@
 This project contains a REST API built with Node.js and Express. The API uses a postgresql database with sequelize.
 
 ## Server configuration
-Server must have `node.js (v11.6.0)`, `redis-server (3.0.6)`, and `postgresql (9.5.0)` installed.
+Server must have `node.js (v11.6.0)` and `postgresql (9.5.0)` installed.
 
 ### Environment variables
 Server must contain the following environment variables:
