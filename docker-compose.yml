@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  api:
+    build: ./
+    volumes:
+    - ./:/var/www/app
+    environment:
+      - PORT=3000,
+      - NODE_ENV=development
+
+      - dev_db_username=postgres
+      - dev_db_password=Curramba2018
+      - dev_db_database=todolist
+      - dev_db_host=db
+      - dev_db_dialect=postgres
+
+      - test_db_username=postgres
+      - test_db_password=Curramba2018
+      - test_db_database=todolist_test
+      - test_db_host=db
+      - test_db_dialect=postgres
+
+      - prod_db_username=postgres
+      - prod_db_password=null,
+      - prod_db_database=database_production
+      - prod_db_host="db
+      - prod_db_dialect=postgres
+
+      - JWT_SECRET=HD3uiHDfdAasui3s35aAufGiG3nN432BjkVfdasjlHHG
+      - JWT_EXPIRATION=2d
+    ports:
+      - 3000:3000
+    links:
+      - "db"
+    command:
+      sh -c 'npm i && npm run dbcreate && npm run dbmigrate && node bin/www'
+  
+  db:
+    image: postgres:9.5-alpine
+    environment:
+      - POSTGRES_PASSWORD=Curramba2018
+    ports:
+      - "5432:5432"
