@@ -9,7 +9,7 @@ var {
 } = require('../../db/models');
 var elementsPerPage = 10;
 
-router.get('/query/:query', verifyUser, async function (req, res, next) {
+router.get('/query', verifyUser, async function (req, res, next) {
     try {
         let page = req.query.page;
         let entity = req.baseUrl.replace(/^\/v1\//, '');
@@ -19,10 +19,10 @@ router.get('/query/:query', verifyUser, async function (req, res, next) {
             where: {
                 [db.Sequelize.Op.or]: {
                     title: {
-                        [db.Sequelize.Op.iLike]: `%${req.params.query}%`
+                        [db.Sequelize.Op.iLike]: `%${req.query.q}%`
                     },
                     tags: {
-                        [db.Sequelize.Op.iLike]: `%${req.params.query}%`
+                        [db.Sequelize.Op.iLike]: `%${req.query.q}%`
                     }
                 }
             },
