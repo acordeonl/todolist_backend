@@ -1,0 +1,7 @@
+{
+    "eslint.enable": true,
+    "files.associations": {
+        "*.po": "coffeescript",
+        "*.js": "javascript"
+    },
+}
