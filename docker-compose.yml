@@ -31,13 +31,16 @@ services:
       - JWT_EXPIRATION=2d
     ports:
       - 3000:3000
+      - 9229:9229
     links:
       - "db"
     command:
-      sh -c 'npm i && npm run dbcreate && npm run dbmigrate && node bin/www'
+      sh -c 'npm i && npm run dbcreate && npm run dbmigrate && node_modules/.bin/nodemon -L --inspect=0.0.0.0:9229 bin/www'
     restart: always
   db:
     image: postgres:9.5-alpine
+    volumes:
+      - /private/var/lib/postgresql:/var/lib/postgresql
     environment:
       - POSTGRES_PASSWORD=Curramba2018
     ports:
